@@ -78,8 +78,9 @@ void runPratice(){
 
 //  help (shows commands)
 //  quit
-//  (type a guess)
+//  repeat (repeats the question)
 //  show (reveal the answer)
+//  (type a guess)
 bool checkInput(int questionNum){
     std::string input;
     
