@@ -33,12 +33,18 @@ int main () {
 // reads questions and answers
 // these are separated line by line
 // question followed by answer
-void readFile(std::string path){
+void readFile(){
     std::ifstream f;
-    std::string line;
+    std::string line, file;
     int itr = 0;
-        
-    f.open(path);
+    
+    // read file using user input
+    do {
+        std::cout << "Enter '.txt' file name:\n";
+        std::getline(std::cin, file);
+        f.open("../input/" + file + ".txt");
+    } while(!f.is_open());
+    std::cout << std::endl;
 
     while (std::getline(f,line)){
         std::transform(line.begin(), line.end(), line.begin(), ::tolower);
@@ -61,7 +67,7 @@ void readFile(std::string path){
 void runPratice(){
     
     // read the file
-    readFile("../qa.txt");
+    readFile();
     
     // infinte loop
     while(true){
