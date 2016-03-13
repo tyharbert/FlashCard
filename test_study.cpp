@@ -138,12 +138,12 @@ int getQuestionNum(){
         if (missed.empty()){
             for (int i = 0; i < questions.size(); i++)
                 unanswered.push_back(i);
-            std::cout << "Starting " << unanswered.size() << " questions!\n\n";
+            std::cout << "Starting " << unanswered.size() << " question" << (unanswered.size()>1?"s":"") << "!\n\n";
         } else {
             for (int i = 0; i < missed.size(); i++)
                 unanswered.push_back(missed[i]);
             missed.clear();
-            std::cout << "Starting " << unanswered.size() << " missed questions!\n\n";
+            std::cout << "Starting " << unanswered.size() << " missed question" << (unanswered.size()>1?"s":"") << "!\n\n";
         }
     }
     
