@@ -110,15 +110,15 @@ bool checkInput(int questionNum){
     }
     else {
         if ((input[0] > 96 && input[0] < 101) && answers[questionNum] == currentanswers[input[0]-97]){
-            if (!missed.empty() && (missed.back() == questionNum))
-                missed.pop_back();
             correct++;
             std::cout << "got it!\n\n";
             return true;
         } else {
             if (missed.empty() || (missed.back() != questionNum))
                 missed.push_back(questionNum);
-            std::cout << "try again.\n";
+            
+            std::cout << "missed! the correct answer is "<< answers[questionNum] << std::endl << std::endl;
+            return true;
         }
     }
     
